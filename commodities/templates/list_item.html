@@ -1,0 +1,15 @@
+<div class="column is-3 product-list-item">
+    <div class="box">
+        <div class="card" style="width: 10rem;">
+            <div class="col-md-15">
+  <img src="{{ product.image.url }}" class="card-img-top" alt="image"></div>
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title}}</h5>
+    <p class="card-text">{{ product.description }}</p>
+    <p class="card-text">{{ product.price }}</p>
+    <a href="{% url 'product' product.category.slug product.slug %}" class="btn btn-primary">view</a>
+  </div>
+</div>
+
+</div>
+</div>

@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>DawaZon</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'css/maicons.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/animate/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/pays.css' %}">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,200,300,500,600,700,900">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900">
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+
+
+.payment
+  %h1.payment__headline Payment Information
+  %form.payment__form
+    .payment__group.payment__group--name
+      %input.payment__field.payment__field--name()
+      %label.payment__label.payment__label--name Name
+    .payment__group.payment__group--creditcard
+      %input.payment__field.payment__field--creditcard()
+      %label.payment__label.payment__label--creditcard Card Number
+    .columns
+      .payment__group.payment__group--date
+        %input.payment__field.payment__field--date()
+        %label.payment__label.payment__label--date Date
+      .payment__group.payment__group--cvv
+        %input.payment__field.payment__field--cvv()
+        %label.payment__label.payment__label--cvv CVV <span class="payment__tooltip payment__tooltip--CVV">What's this?</span>
+  .payment__footer
+    .payment__location
+      1/5
+    .payment__next
+      <a href="#"><strong>Next</strong>: Billing Address <span class="fa fa-arrow-right"></span></a>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.payment__field').blur(function(){
+    if($(this).val() !==""){
+      $(this).addClass('payment__field--filled');
+    }else{
+      $(this).removeClass('payment__field--filled');
+    }
+  });
+});
+</script>

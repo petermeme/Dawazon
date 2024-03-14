@@ -1,0 +1,143 @@
+//Imports
+@import "bourbon";
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,900|Montserrat:400,700);
+//Colors: color($indigo, 400); https://www.google.com/design/spec/style/color.html#color-color-palette
+//https://css-tricks.com/bem-101/
+
+//Codepen formatting
+html,body{
+  height: 100%;
+  min-height:100%;
+}
+body{
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+}
+
+//Variables
+$serif:'Merriweather', 'Baskerville', 'Palatino Linotype', Georgia, serif;
+$light: 'Merriweather Light', 'Merriweather', 'Baskerville', 'Palatino Linotype', Georgia, serif;
+$sans: 'Montserrat', 'Lucida Grande', 'Lucida', helvetica, arial, sans-serif;
+
+//Specific Styles
+*{
+  box-sizing: border-box;
+}
+html,body{
+  background-color: color($indigo, 50);
+  font-family:$sans;
+  font-weight: 200;
+}
+
+.payment{
+  background-color: color($indigo,600);
+  width: 30rem;
+  border: 1px solid color($indigo,700);
+  box-shadow: 0px 10px 100px color($deep-purple,100);
+}
+
+.payment__headline{
+  padding: 1rem;
+  font-size: 1.5em;
+  color: color($deep-purple, 50);
+}
+
+.payment__form{
+  
+}
+
+.payment__group{
+  position:relative;
+}
+.payment__label{
+  display: block;
+  width: 100%;
+  padding-left: 1rem;
+  position:absolute;
+  z-index:10;
+  pointer-events:none;
+  top: 1.5rem;
+  font-size: 1rem;
+  color: color($deep-purple, 200);
+  @include transition(all,0.25s);
+}
+.payment__field:focus ~ label, .payment__field--filled ~ label{
+  top: 0.5rem;
+  font-size: 0.6em;
+  color: color($deep-purple, 600)
+}
+
+.payment__field{
+  display: block;
+  width: 100%;
+  position:relative;
+  padding: 1.25rem 1rem 1rem;
+  margin-bottom:0;
+  border:0;
+  font-size: 1.5rem;
+  color: color($deep-purple,800);
+  border-bottom: 1px solid color($deep-purple,800);
+  &:focus{
+    outline:0;
+  }
+}
+
+.payment__field--name{
+  border-top: 1px solid color($deep-purple,800);
+}
+
+.columns{
+  width: 100%;
+  display: block;
+  position:relative;
+}
+.payment__group--date,.payment__group--cvv{
+  width:50%;
+  float:left;
+  display:inline-block;
+}
+.payment__field--date{
+  border-right: 1px solid color($deep-purple,800);
+}
+.payment__tooltip{
+  display:none;
+}
+.payment__footer{
+  @include display(flex);
+  width: 100%;
+  
+}
+.payment__location, payment__next a{
+  padding: 1rem;
+}
+.payment__location{
+  background-color:color($grey,900);
+  color: color($grey,300);
+  position:relative;
+  width: 15%;
+  text-align:center;
+}
+.payment__next{
+  width: 85%;
+}
+.payment__next a{
+  background-color: color($blue,600);
+  color: color($blue,50);
+  width: 100%;
+  display:block;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  @include transition(all 0.25s);
+  &:hover,&:focus{
+    outline: 0;
+    background-color: color($blue,800);
+    padding-left: 2rem;
+  }
+}
+strong{
+  font-weight: bold;
+}
+//Utilities
+%clearfix {&:after {content: "";display: table;clear: both;}}
