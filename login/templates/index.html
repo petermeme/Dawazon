@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>DawaZon</title>
@@ -22,6 +22,7 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     </head>
     <body>
+
   <section>
     <div class="topbar">
       <div class="container">
@@ -45,9 +46,10 @@
       </div> <!-- .container -->
     </div> <!-- .topbar -->
  </section>
- <nav class="navbar navbar-expand-lg navabr-light bg-light">
-      <div class="container-fluid px-4 px-lg-5">
-        <a class="navbar-brand" href="{{ home.url }}"><span class="text-primary">DawaZon</span>-Pharm</a>
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{% url 'home' %}">Dawazon</a>
 
         <form method="get" action="{% url 'search' %}">
           <div class="input-group input-navbar field has-addons">
@@ -58,12 +60,9 @@
         </div>
         </form>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'vendors' %}">Pharmacies</a>
             </li>

@@ -29,7 +29,6 @@ pyproject-api==1.6.1
 python-decouple==3.8
 requests==2.31.0
 sqlparse==0.4.4
-stripe==8.5.0
 tomli==2.0.1
 tox==4.12.1
 typing-extensions==4.9.0
